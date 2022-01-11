@@ -2,6 +2,6 @@
 
 class_Pwm Pwm;
 
-void class_Pwm::InitFunction(void){
+FUNC(void, PWM_CODE) class_Pwm::InitFunction(void){
 }
 

@@ -4,7 +4,7 @@
 
 class class_Pwm{
    public:
-      void InitFunction(void);
+      FUNC(void, PWM_CODE) InitFunction(void);
 };
 
 extern class_Pwm Pwm;
