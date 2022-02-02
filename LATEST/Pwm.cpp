@@ -8,6 +8,8 @@
 /*****************************************************/
 #include "Pwm.h"
 
+#include "Pwm_EcuM.h"
+
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -32,14 +34,16 @@
 /* OBJECTS                                           */
 /*****************************************************/
 class_Pwm Pwm;
+class_Pwm_EcuM Pwm_EcuM;
+class_Pwm_EcuM *Pwm_EcuM_ptr = &Pwm_EcuM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, PWM_CODE) class_Pwm::InitFunction(void){
+FUNC(void, PWM_CODE) class_Pwm_EcuM::InitFunction(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm::DeInitFunction(void){
+FUNC(void, PWM_CODE) class_Pwm_EcuM::DeInitFunction(void){
 }
 
 FUNC(void, PWM_CODE) class_Pwm::SetDutyCycle(void){

@@ -1,14 +1,15 @@
 #pragma once
 /*****************************************************/
-/* File   : Pwm.h                                    */
+/* File   : Pwm_EcuM.h                               */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "Std_Types.h"
 #include "Compiler_Cfg_Pwm.h"
+
+#include "EcuM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,23 +22,13 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_Pwm{
+class class_Pwm_EcuM : public class_EcuM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, PWM_CODE) SetDutyCycle         (void);
-      FUNC(void, PWM_CODE) SetPeriodAndDuty     (void);
-      FUNC(void, PWM_CODE) SetOutputToIdle      (void);
-      FUNC(void, PWM_CODE) SetOutputState       (void);
-      FUNC(void, PWM_CODE) DisableNotification  (void);
-      FUNC(void, PWM_CODE) EnableNotification   (void);
-      FUNC(void, PWM_CODE) SetPowerState        (void);
-      FUNC(void, PWM_CODE) GetCurrentPowerState (void);
-      FUNC(void, PWM_CODE) GetTargetPowerState  (void);
-      FUNC(void, PWM_CODE) PreparePowerState    (void);
-      FUNC(void, PWM_CODE) GetVersionInfo       (void);
-      FUNC(void, PWM_CODE) MainFunction         (void);
+      FUNC(void, PWM_CODE) InitFunction   (void);
+      FUNC(void, PWM_CODE) DeInitFunction (void);
 };
 
 /*****************************************************/
@@ -51,7 +42,7 @@ class class_Pwm{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_Pwm Pwm;
+extern class_Pwm_EcuM *Pwm_EcuM_ptr;
 
 /*****************************************************/
 /* EOF                                               */
