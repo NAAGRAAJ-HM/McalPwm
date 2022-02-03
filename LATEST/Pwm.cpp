@@ -33,9 +33,9 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Pwm Pwm;
 class_Pwm_EcuM Pwm_EcuM;
-class_Pwm_EcuM *Pwm_EcuM_ptr = &Pwm_EcuM;
+class_EcuM_Client *EcuM_Client_ptr_Pwm = &Pwm_EcuM;
+class_Pwm Pwm;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

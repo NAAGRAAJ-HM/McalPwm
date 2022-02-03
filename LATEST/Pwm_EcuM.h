@@ -42,7 +42,7 @@ class class_Pwm_EcuM : public class_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_Pwm_EcuM *Pwm_EcuM_ptr;
+extern class_EcuM_Client *EcuM_Client_ptr_Pwm;
 
 /*****************************************************/
 /* EOF                                               */
