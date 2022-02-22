@@ -6,9 +6,10 @@
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "Pwm.h"
-
+#include "module.h"
 #include "Pwm_EcuM.h"
+#include "Pwm_SchM.h"
+#include "Pwm_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,6 +22,16 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class module_Pwm:
+      public abstract_module
+   ,  public interface_Pwm_EcuM
+   ,  public interface_Pwm_SchM
+{
+   public:
+      FUNC(void, PWM_CODE) InitFunction   (void);
+      FUNC(void, PWM_CODE) DeInitFunction (void);
+      FUNC(void, PWM_CODE) MainFunction   (void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -33,53 +44,54 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Pwm_EcuM Pwm_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_Pwm = &Pwm_EcuM;
-class_Pwm Pwm;
+module_Pwm Pwm;
+
+interface_Pwm_EcuM *EcuM_Client_ptr_Pwm = &Pwm;
+interface_Pwm_SchM *SchM_Client_ptr_Pwm = &Pwm;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, PWM_CODE) class_Pwm_EcuM::InitFunction(void){
+FUNC(void, PWM_CODE) module_Pwm::InitFunction(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_EcuM::DeInitFunction(void){
+FUNC(void, PWM_CODE) module_Pwm::DeInitFunction(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm::SetDutyCycle(void){
+FUNC(void, PWM_CODE) module_Pwm::MainFunction(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm::SetPeriodAndDuty(void){
+FUNC(void, PWM_CODE) class_Pwm_Unused::SetDutyCycle(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm::SetOutputToIdle(void){
+FUNC(void, PWM_CODE) class_Pwm_Unused::SetPeriodAndDuty(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm::SetOutputState(void){
+FUNC(void, PWM_CODE) class_Pwm_Unused::SetOutputToIdle(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm::DisableNotification(void){
+FUNC(void, PWM_CODE) class_Pwm_Unused::SetOutputState(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm::EnableNotification(void){
+FUNC(void, PWM_CODE) class_Pwm_Unused::DisableNotification(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm::SetPowerState(void){
+FUNC(void, PWM_CODE) class_Pwm_Unused::EnableNotification(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm::GetCurrentPowerState(void){
+FUNC(void, PWM_CODE) class_Pwm_Unused::SetPowerState(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm::GetTargetPowerState(void){
+FUNC(void, PWM_CODE) class_Pwm_Unused::GetCurrentPowerState(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm::PreparePowerState(void){
+FUNC(void, PWM_CODE) class_Pwm_Unused::GetTargetPowerState(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm::GetVersionInfo(void){
+FUNC(void, PWM_CODE) class_Pwm_Unused::PreparePowerState(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm::MainFunction(void){
+FUNC(void, PWM_CODE) class_Pwm_Unused::GetVersionInfo(void){
 }
 
 /*****************************************************/

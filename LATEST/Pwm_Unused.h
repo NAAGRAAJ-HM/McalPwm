@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : Pwm.h                                    */
+/* File   : Pwm_Unused.h                             */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -21,7 +21,7 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_Pwm{
+class class_Pwm_Unused{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
@@ -37,7 +37,6 @@ class class_Pwm{
       FUNC(void, PWM_CODE) GetTargetPowerState  (void);
       FUNC(void, PWM_CODE) PreparePowerState    (void);
       FUNC(void, PWM_CODE) GetVersionInfo       (void);
-      FUNC(void, PWM_CODE) MainFunction         (void);
 };
 
 /*****************************************************/
@@ -51,7 +50,7 @@ class class_Pwm{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_Pwm Pwm;
+//extern class_Pwm Pwm;
 
 /*****************************************************/
 /* EOF                                               */
