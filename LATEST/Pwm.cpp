@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_Pwm:
       public abstract_module
-   ,  public interface_Pwm_EcuM
-   ,  public interface_Pwm_SchM
 {
    public:
       FUNC(void, PWM_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_Pwm:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_Pwm Pwm;
-
-interface_Pwm_EcuM *EcuM_Client_ptr_Pwm = &Pwm;
-interface_Pwm_SchM *SchM_Client_ptr_Pwm = &Pwm;
+module_Pwm     Pwm;
+infEcuMClient* gptrinfEcuMClient_Pwm = &Pwm;
+infSchMClient* gptrinfSchMClient_Pwm = &Pwm;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
