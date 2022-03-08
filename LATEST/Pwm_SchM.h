@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_Pwm_SchM *SchM_Client_ptr_Pwm;
+extern infSchMClient *gptrinfSchMClient_Pwm;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
