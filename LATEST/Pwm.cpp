@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "Pwm_EcuM.h"
-#include "Pwm_SchM.h"
+#include "infPwm_EcuM.h"
+#include "infPwm_SchM.h"
 #include "Pwm_Unused.h"
 
 /*****************************************************/
@@ -28,6 +28,7 @@ class module_Pwm:
    public:
       FUNC(void, PWM_CODE) InitFunction   (void);
       FUNC(void, PWM_CODE) DeInitFunction (void);
+      FUNC(void, PWM_CODE) GetVersionInfo (void);
       FUNC(void, PWM_CODE) MainFunction   (void);
 };
 
@@ -44,6 +45,7 @@ class module_Pwm:
 /*****************************************************/
 module_Pwm     Pwm;
 infEcuMClient* gptrinfEcuMClient_Pwm = &Pwm;
+infDcmClient*  gptrinfDcmClient_Pwm  = &Pwm;
 infSchMClient* gptrinfSchMClient_Pwm = &Pwm;
 
 /*****************************************************/
@@ -53,6 +55,9 @@ FUNC(void, PWM_CODE) module_Pwm::InitFunction(void){
 }
 
 FUNC(void, PWM_CODE) module_Pwm::DeInitFunction(void){
+}
+
+FUNC(void, PWM_CODE) module_Pwm::GetVersionInfo(void){
 }
 
 FUNC(void, PWM_CODE) module_Pwm::MainFunction(void){
