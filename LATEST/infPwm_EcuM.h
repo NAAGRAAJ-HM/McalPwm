@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : Pwm_SchM.h                               */
+/* File   : infPwm_EcuM.h                            */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infSchMClient* gptrinfSchMClient_Pwm;
+extern infEcuMClient* gptrinfEcuMClient_Pwm;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
