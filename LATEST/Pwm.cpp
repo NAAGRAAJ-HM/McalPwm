@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infPwm_Version.h"
+#include "Pwm_Cfg.h"
 #include "infPwm_EcuM.h"
 #include "infPwm_Dcm.h"
 #include "infPwm_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define PWM_AR_RELEASE_MAJOR_VERSION                                           4
+#define PWM_AR_RELEASE_MINOR_VERSION                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(PWM_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible PWM_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(PWM_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible PWM_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, PWM_CODE) module_Pwm::DeInitFunction(void){
 }
 
 FUNC(void, PWM_CODE) module_Pwm::GetVersionInfo(void){
+#if(STD_ON == Pwm_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, PWM_CODE) module_Pwm::MainFunction(void){
