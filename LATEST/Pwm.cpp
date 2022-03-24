@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "Pwm_Cfg.h"
+#include "CfgPwm.h"
 #include "infPwm_EcuM.h"
 #include "infPwm_Dcm.h"
 #include "infPwm_SchM.h"
