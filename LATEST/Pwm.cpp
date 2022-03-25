@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgPwm.h"
-#include "infPwm_EcuM.h"
-#include "infPwm_Dcm.h"
-#include "infPwm_SchM.h"
+#include "module.hpp"
+#include "CfgPwm.hpp"
+#include "infPwm_EcuM.hpp"
+#include "infPwm_Dcm.hpp"
+#include "infPwm_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, PWM_CODE) module_Pwm::GetVersionInfo(void){
 FUNC(void, PWM_CODE) module_Pwm::MainFunction(void){
 }
 
-#include "Pwm_Unused.h"
+#include "Pwm_Unused.hpp"
 
 FUNC(void, PWM_CODE) class_Pwm_Unused::SetDutyCycle(void){
 }
