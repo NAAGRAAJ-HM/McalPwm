@@ -37,10 +37,9 @@ class module_Pwm:
    public:
       module_Pwm(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, PWM_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, PWM_CONFIG_DATA, PWM_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, PWM_CODE) InitFunction   (void);
       FUNC(void, PWM_CODE) DeInitFunction (void);
       FUNC(void, PWM_CODE) MainFunction   (void);
 };
@@ -77,23 +76,39 @@ VAR(module_Pwm, PWM_VAR) Pwm(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, PWM_CODE) module_Pwm::InitFunction(
-   CONSTP2CONST(CfgPwm_Type, CFGPWM_CONFIG_DATA, CFGPWM_APPL_CONST) lptrCfgPwm
+   CONSTP2CONST(CfgModule_TypeAbstract, PWM_CONFIG_DATA, PWM_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgPwm){
+   if(E_OK == IsInitDone){
 #if(STD_ON == Pwm_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgPwm for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == Pwm_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_Pwm as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   Pwm.IsInitDone = E_OK;
 }
 
 FUNC(void, PWM_CODE) module_Pwm::DeInitFunction(void){
-   Pwm.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == Pwm_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, PWM_CODE) module_Pwm::MainFunction(void){
