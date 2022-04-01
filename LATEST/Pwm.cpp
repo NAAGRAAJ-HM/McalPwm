@@ -78,6 +78,7 @@ VAR(module_Pwm, PWM_VAR) Pwm(
 FUNC(void, PWM_CODE) module_Pwm::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, PWM_CONFIG_DATA, PWM_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == Pwm_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == Pwm_DevErrorDetect)
       Det_ReportError(
@@ -85,6 +86,7 @@ FUNC(void, PWM_CODE) module_Pwm::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Pwm_DevErrorDetect)
          Det_ReportError(
@@ -96,10 +98,13 @@ FUNC(void, PWM_CODE) module_Pwm::InitFunction(
 // use PBcfg_Pwm as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == Pwm_InitCheck)
    }
+#endif
 }
 
 FUNC(void, PWM_CODE) module_Pwm::DeInitFunction(void){
+#if(STD_ON == Pwm_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == Pwm_DevErrorDetect)
       Det_ReportError(
@@ -107,11 +112,26 @@ FUNC(void, PWM_CODE) module_Pwm::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == Pwm_InitCheck)
    }
+#endif
 }
 
 FUNC(void, PWM_CODE) module_Pwm::MainFunction(void){
+#if(STD_ON == Pwm_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == Pwm_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == Pwm_InitCheck)
+   }
+#endif
 }
 
 class class_Pwm_Unused{
