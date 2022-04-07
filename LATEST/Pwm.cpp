@@ -101,8 +101,8 @@ FUNC(void, PWM_CODE) module_Pwm::InitFunction(
             lptrCfg = lptrCfgModule;
          }
          else{
-// use PBcfg_CanIf as back-up configuration
-            lptrCfg = PBcfg_CanIf;
+// use PBcfgCanIf as back-up configuration
+            lptrCfg = &PBcfgPwm;
          }
       }
       IsInitDone = E_OK;
