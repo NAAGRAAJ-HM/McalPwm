@@ -31,8 +31,23 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_Pwm_Functionality{
+   public:
+      FUNC(void, PWM_CODE) SetDutyCycle         (void);
+      FUNC(void, PWM_CODE) SetPeriodAndDuty     (void);
+      FUNC(void, PWM_CODE) SetOutputToIdle      (void);
+      FUNC(void, PWM_CODE) SetOutputState       (void);
+      FUNC(void, PWM_CODE) DisableNotification  (void);
+      FUNC(void, PWM_CODE) EnableNotification   (void);
+      FUNC(void, PWM_CODE) SetPowerState        (void);
+      FUNC(void, PWM_CODE) GetCurrentPowerState (void);
+      FUNC(void, PWM_CODE) GetTargetPowerState  (void);
+      FUNC(void, PWM_CODE) PreparePowerState    (void);
+};
+
 class module_Pwm:
       public abstract_module
+   ,  public class_Pwm_Functionality
 {
    public:
       module_Pwm(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -84,6 +99,10 @@ FUNC(void, PWM_CODE) module_Pwm::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == Pwm_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -92,6 +111,10 @@ FUNC(void, PWM_CODE) module_Pwm::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Pwm_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -116,6 +139,10 @@ FUNC(void, PWM_CODE) module_Pwm::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Pwm_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -132,6 +159,10 @@ FUNC(void, PWM_CODE) module_Pwm::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Pwm_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -142,48 +173,34 @@ FUNC(void, PWM_CODE) module_Pwm::MainFunction(void){
 #endif
 }
 
-class class_Pwm_Unused{
-   public:
-      FUNC(void, PWM_CODE) SetDutyCycle         (void);
-      FUNC(void, PWM_CODE) SetPeriodAndDuty     (void);
-      FUNC(void, PWM_CODE) SetOutputToIdle      (void);
-      FUNC(void, PWM_CODE) SetOutputState       (void);
-      FUNC(void, PWM_CODE) DisableNotification  (void);
-      FUNC(void, PWM_CODE) EnableNotification   (void);
-      FUNC(void, PWM_CODE) SetPowerState        (void);
-      FUNC(void, PWM_CODE) GetCurrentPowerState (void);
-      FUNC(void, PWM_CODE) GetTargetPowerState  (void);
-      FUNC(void, PWM_CODE) PreparePowerState    (void);
-};
-
-FUNC(void, PWM_CODE) class_Pwm_Unused::SetDutyCycle(void){
+FUNC(void, PWM_CODE) class_Pwm_Functionality::SetDutyCycle(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Unused::SetPeriodAndDuty(void){
+FUNC(void, PWM_CODE) class_Pwm_Functionality::SetPeriodAndDuty(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Unused::SetOutputToIdle(void){
+FUNC(void, PWM_CODE) class_Pwm_Functionality::SetOutputToIdle(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Unused::SetOutputState(void){
+FUNC(void, PWM_CODE) class_Pwm_Functionality::SetOutputState(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Unused::DisableNotification(void){
+FUNC(void, PWM_CODE) class_Pwm_Functionality::DisableNotification(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Unused::EnableNotification(void){
+FUNC(void, PWM_CODE) class_Pwm_Functionality::EnableNotification(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Unused::SetPowerState(void){
+FUNC(void, PWM_CODE) class_Pwm_Functionality::SetPowerState(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Unused::GetCurrentPowerState(void){
+FUNC(void, PWM_CODE) class_Pwm_Functionality::GetCurrentPowerState(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Unused::GetTargetPowerState(void){
+FUNC(void, PWM_CODE) class_Pwm_Functionality::GetTargetPowerState(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Unused::PreparePowerState(void){
+FUNC(void, PWM_CODE) class_Pwm_Functionality::PreparePowerState(void){
 }
 
 /******************************************************************************/
