@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "Pwm_core.hpp"
 #include "infPwm_EcuM.hpp"
 #include "infPwm_Dcm.hpp"
 #include "infPwm_SchM.hpp"
