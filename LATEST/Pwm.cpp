@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgPwm.hpp"
 #include "Pwm_core.hpp"
-#include "infPwm_EcuM.hpp"
-#include "infPwm_Dcm.hpp"
-#include "infPwm_SchM.hpp"
+#include "infPwm.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_Pwm:
       );
       FUNC(void, PWM_CODE) DeInitFunction (void);
       FUNC(void, PWM_CODE) MainFunction   (void);
+      PWM_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_Pwm, PWM_VAR) Pwm;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, PWM_VAR, PWM_CONST) gptrinfSchMClient_Pwm = &Pwm;
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgPwm.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
