@@ -159,34 +159,34 @@ FUNC(void, PWM_CODE) module_Pwm::MainFunction(void){
 #endif
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Functionality::SetDutyCycle(void){
+FUNC(void, PWM_CODE) module_Pwm::SetDutyCycle(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Functionality::SetPeriodAndDuty(void){
+FUNC(void, PWM_CODE) module_Pwm::SetPeriodAndDuty(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Functionality::SetOutputToIdle(void){
+FUNC(void, PWM_CODE) module_Pwm::SetOutputToIdle(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Functionality::SetOutputState(void){
+FUNC(void, PWM_CODE) module_Pwm::SetOutputState(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Functionality::DisableNotification(void){
+FUNC(void, PWM_CODE) module_Pwm::DisableNotification(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Functionality::EnableNotification(void){
+FUNC(void, PWM_CODE) module_Pwm::EnableNotification(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Functionality::SetPowerState(void){
+FUNC(void, PWM_CODE) module_Pwm::SetPowerState(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Functionality::GetCurrentPowerState(void){
+FUNC(void, PWM_CODE) module_Pwm::GetCurrentPowerState(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Functionality::GetTargetPowerState(void){
+FUNC(void, PWM_CODE) module_Pwm::GetTargetPowerState(void){
 }
 
-FUNC(void, PWM_CODE) class_Pwm_Functionality::PreparePowerState(void){
+FUNC(void, PWM_CODE) module_Pwm::PreparePowerState(void){
 }
 
 /******************************************************************************/
