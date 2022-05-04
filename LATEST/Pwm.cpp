@@ -113,7 +113,7 @@ FUNC(void, PWM_CODE) module_Pwm::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  PWM_E_UNINIT
       );
 #endif
    }
@@ -133,7 +133,7 @@ FUNC(void, PWM_CODE) module_Pwm::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  PWM_E_UNINIT
       );
 #endif
    }
@@ -152,7 +152,7 @@ FUNC(void, PWM_CODE) module_Pwm::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  PWM_E_UNINIT
       );
 #endif
    }
