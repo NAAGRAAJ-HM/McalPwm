@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgPwm.hpp"
 #include "Pwm_core.hpp"
-#include "infPwm.hpp"
+#include "infPwm_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Pwm:
+   INTERFACES_EXPORTED_PWM
       public abstract_module
    ,  public class_Pwm_Functionality
 {
