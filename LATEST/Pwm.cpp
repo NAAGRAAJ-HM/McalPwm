@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Pwm:
-   INTERFACES_EXPORTED_PWM
+      INTERFACES_EXPORTED_PWM
       public abstract_module
    ,  public class_Pwm_Functionality
 {
