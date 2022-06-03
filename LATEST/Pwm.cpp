@@ -10,6 +10,7 @@
 #include "CfgPwm.hpp"
 #include "Pwm_core.hpp"
 #include "infPwm_Exp.hpp"
+#include "infPwm_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
