@@ -73,10 +73,6 @@ CONSTP2VAR(infSchMClient, PWM_VAR, PWM_CONST) gptrinfSchMClient_Pwm = &Pwm;
 /******************************************************************************/
 VAR(module_Pwm, PWM_VAR) Pwm(
    {
-#if(STD_ON == _ReSIM)
-         "Pwm",
-#else
-#endif
          PWM_AR_RELEASE_VERSION_MAJOR
       ,  PWM_AR_RELEASE_VERSION_MINOR
       ,  0x00
