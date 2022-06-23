@@ -130,7 +130,9 @@ FUNC(void, PWM_CODE) module_Pwm::InitFunction(
 #endif
 }
 
-FUNC(void, PWM_CODE) module_Pwm::DeInitFunction(void){
+FUNC(void, PWM_CODE) module_Pwm::DeInitFunction(
+   void
+){
 #if(STD_ON == Pwm_InitCheck)
    if(
          E_OK
@@ -153,7 +155,9 @@ FUNC(void, PWM_CODE) module_Pwm::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, PWM_CODE) module_Pwm::MainFunction(void){
+FUNC(void, PWM_CODE) module_Pwm::MainFunction(
+   void
+){
 #if(STD_ON == Pwm_InitCheck)
    if(
          E_OK
@@ -175,34 +179,54 @@ FUNC(void, PWM_CODE) module_Pwm::MainFunction(void){
 #endif
 }
 
-FUNC(void, PWM_CODE) module_Pwm::SetDutyCycle(void){
+FUNC(void, PWM_CODE) module_Pwm::SetDutyCycle(
+   void
+){
 }
 
-FUNC(void, PWM_CODE) module_Pwm::SetPeriodAndDuty(void){
+FUNC(void, PWM_CODE) module_Pwm::SetPeriodAndDuty(
+   void
+){
 }
 
-FUNC(void, PWM_CODE) module_Pwm::SetOutputToIdle(void){
+FUNC(void, PWM_CODE) module_Pwm::SetOutputToIdle(
+   void
+){
 }
 
-FUNC(void, PWM_CODE) module_Pwm::SetOutputState(void){
+FUNC(void, PWM_CODE) module_Pwm::SetOutputState(
+   void
+){
 }
 
-FUNC(void, PWM_CODE) module_Pwm::DisableNotification(void){
+FUNC(void, PWM_CODE) module_Pwm::DisableNotification(
+   void
+){
 }
 
-FUNC(void, PWM_CODE) module_Pwm::EnableNotification(void){
+FUNC(void, PWM_CODE) module_Pwm::EnableNotification(
+   void
+){
 }
 
-FUNC(void, PWM_CODE) module_Pwm::SetPowerState(void){
+FUNC(void, PWM_CODE) module_Pwm::SetPowerState(
+   void
+){
 }
 
-FUNC(void, PWM_CODE) module_Pwm::GetCurrentPowerState(void){
+FUNC(void, PWM_CODE) module_Pwm::GetCurrentPowerState(
+   void
+){
 }
 
-FUNC(void, PWM_CODE) module_Pwm::GetTargetPowerState(void){
+FUNC(void, PWM_CODE) module_Pwm::GetTargetPowerState(
+   void
+){
 }
 
-FUNC(void, PWM_CODE) module_Pwm::PreparePowerState(void){
+FUNC(void, PWM_CODE) module_Pwm::PreparePowerState(
+   void
+){
 }
 
 /******************************************************************************/
