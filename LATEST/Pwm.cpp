@@ -82,12 +82,7 @@ FUNC(void, PWM_CODE) module_Pwm::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgPwm;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == Pwm_DevErrorDetect)
