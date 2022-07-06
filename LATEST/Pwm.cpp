@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgPwm.hpp"
-#include "Pwm_core.hpp"
-#include "infPwm_Exp.hpp"
+#include "Pwm.hpp"
 #include "infPwm_Imp.hpp"
 
 /******************************************************************************/
@@ -32,26 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_Pwm:
-      INTERFACES_EXPORTED_PWM
-      public abstract_module
-   ,  public class_Pwm_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, PWM_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, PWM_CONFIG_DATA, PWM_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, PWM_CODE) DeInitFunction (void);
-      FUNC(void, PWM_CODE) MainFunction   (void);
-      PWM_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_Pwm, PWM_VAR) Pwm;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
