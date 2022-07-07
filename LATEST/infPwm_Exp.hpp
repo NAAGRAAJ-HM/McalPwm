@@ -8,9 +8,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "infPwm_EcuM.hpp"
-#include "infPwm_Dcm.hpp"
 #include "infPwm_Det.hpp"
-#include "infPwm_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
