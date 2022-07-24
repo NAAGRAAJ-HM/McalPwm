@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstPwm.hpp"
 #include "CfgPwm.hpp"
 #include "Pwm_core.hpp"
 #include "infPwm_Exp.hpp"
@@ -31,13 +32,15 @@ class module_Pwm:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstPwm_Type* lptrConst = (ConstPwm_Type*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, PWM_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, PWM_CONFIG_DATA, PWM_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, PWM_CONST,       PWM_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   PWM_CONFIG_DATA, PWM_APPL_CONST) lptrCfgModule
       );
       FUNC(void, PWM_CODE) DeInitFunction (void);
       FUNC(void, PWM_CODE) MainFunction   (void);

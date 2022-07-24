@@ -48,7 +48,8 @@ VAR(module_Pwm, PWM_VAR) Pwm;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, PWM_CODE) module_Pwm::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, PWM_CONFIG_DATA, PWM_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, PWM_CONST,       PWM_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   PWM_CONFIG_DATA, PWM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Pwm_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, PWM_CODE) module_Pwm::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == Pwm_DevErrorDetect)
