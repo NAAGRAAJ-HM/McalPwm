@@ -61,7 +61,7 @@ FUNC(void, PWM_CODE) module_Pwm::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstPwm_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
