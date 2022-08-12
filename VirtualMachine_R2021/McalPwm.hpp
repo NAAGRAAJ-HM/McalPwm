@@ -1,13 +1,16 @@
 #pragma once
 /******************************************************************************/
-/* File   : infMcalPwm_ServiceDet.hpp                                                    */
+/* File   : McalPwm.hpp                                                           */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CompilerCfg_McalPwm.hpp"
+#include "ConstMcalPwm.hpp"
+#include "CfgMcalPwm.hpp"
+#include "McalPwm_core.hpp"
+#include "infMcalPwm_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -20,9 +23,29 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-typedef enum{
-      MCALPWM_E_UNINIT
-}McalPwm_TypeServiceDetErrorCode;
+class module_McalPwm:
+      INTERFACES_EXPORTED_PWM
+      public abstract_module
+   ,  public class_McalPwm_Functionality
+{
+   private:
+/******************************************************************************/
+/* OBJECTS                                                                    */
+/******************************************************************************/
+      const ConstMcalPwm_Type* lptrConst = (ConstMcalPwm_Type*)NULL_PTR;
+
+   public:
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
+      FUNC(void, PWM_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, PWM_CONST,       PWM_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   PWM_CONFIG_DATA, PWM_APPL_CONST) lptrCfgModule
+      );
+      FUNC(void, PWM_CODE) DeInitFunction (void);
+      FUNC(void, PWM_CODE) MainFunction   (void);
+      PWM_CORE_FUNCTIONALITIES
+};
 
 /******************************************************************************/
 /* CONSTS                                                                     */
@@ -35,10 +58,7 @@ typedef enum{
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
+extern VAR(module_McalPwm, PWM_VAR) McalPwm;
 
 /******************************************************************************/
 /* EOF                                                                        */

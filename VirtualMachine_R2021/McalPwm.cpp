@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define MCALPWM_AR_RELEASE_VERSION_MAJOR                                           4
-#define MCALPWM_AR_RELEASE_VERSION_MINOR                                           3
+#define PWM_AR_RELEASE_VERSION_MAJOR                                           4
+#define PWM_AR_RELEASE_VERSION_MINOR                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(MCALPWM_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible MCALPWM_AR_RELEASE_VERSION_MAJOR!"
+#if(PWM_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible PWM_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(MCALPWM_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible MCALPWM_AR_RELEASE_VERSION_MINOR!"
+#if(PWM_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible PWM_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_McalPwm, MCALPWM_VAR) McalPwm;
+VAR(module_McalPwm, PWM_VAR) McalPwm;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, MCALPWM_CODE) module_McalPwm::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, MCALPWM_CONST,       MCALPWM_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALPWM_CONFIG_DATA, MCALPWM_APPL_CONST) lptrCfgModule
+FUNC(void, PWM_CODE) module_McalPwm::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, PWM_CONST,       PWM_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   PWM_CONFIG_DATA, PWM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == McalPwm_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, MCALPWM_CODE) module_McalPwm::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  MCALPWM_E_UNINIT
+         ,  PWM_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, MCALPWM_CODE) module_McalPwm::DeInitFunction(
+FUNC(void, PWM_CODE) module_McalPwm::DeInitFunction(
    void
 ){
 #if(STD_ON == McalPwm_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, MCALPWM_CODE) module_McalPwm::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  MCALPWM_E_UNINIT
+         ,  PWM_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, MCALPWM_CODE) module_McalPwm::MainFunction(
+FUNC(void, PWM_CODE) module_McalPwm::MainFunction(
    void
 ){
 #if(STD_ON == McalPwm_InitCheck)
@@ -132,59 +132,59 @@ FUNC(void, MCALPWM_CODE) module_McalPwm::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  MCALPWM_E_UNINIT
+         ,  PWM_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, MCALPWM_CODE) module_McalPwm::SetDutyCycle(
+FUNC(void, PWM_CODE) module_McalPwm::SetDutyCycle(
    void
 ){
 }
 
-FUNC(void, MCALPWM_CODE) module_McalPwm::SetPeriodAndDuty(
+FUNC(void, PWM_CODE) module_McalPwm::SetPeriodAndDuty(
    void
 ){
 }
 
-FUNC(void, MCALPWM_CODE) module_McalPwm::SetOutputToIdle(
+FUNC(void, PWM_CODE) module_McalPwm::SetOutputToIdle(
    void
 ){
 }
 
-FUNC(void, MCALPWM_CODE) module_McalPwm::SetOutputState(
+FUNC(void, PWM_CODE) module_McalPwm::SetOutputState(
    void
 ){
 }
 
-FUNC(void, MCALPWM_CODE) module_McalPwm::DisableNotification(
+FUNC(void, PWM_CODE) module_McalPwm::DisableNotification(
    void
 ){
 }
 
-FUNC(void, MCALPWM_CODE) module_McalPwm::EnableNotification(
+FUNC(void, PWM_CODE) module_McalPwm::EnableNotification(
    void
 ){
 }
 
-FUNC(void, MCALPWM_CODE) module_McalPwm::SetPowerState(
+FUNC(void, PWM_CODE) module_McalPwm::SetPowerState(
    void
 ){
 }
 
-FUNC(void, MCALPWM_CODE) module_McalPwm::GetCurrentPowerState(
+FUNC(void, PWM_CODE) module_McalPwm::GetCurrentPowerState(
    void
 ){
 }
 
-FUNC(void, MCALPWM_CODE) module_McalPwm::GetTargetPowerState(
+FUNC(void, PWM_CODE) module_McalPwm::GetTargetPowerState(
    void
 ){
 }
 
-FUNC(void, MCALPWM_CODE) module_McalPwm::PreparePowerState(
+FUNC(void, PWM_CODE) module_McalPwm::PreparePowerState(
    void
 ){
 }
