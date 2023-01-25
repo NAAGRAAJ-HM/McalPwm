@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalPwm.hpp                                                           */
+/* File   : McalPwm.hpp                                                       */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstMcalPwm.hpp"
+#include "infMcalPwm_ServiceNvM_Types.hpp"
 #include "CfgMcalPwm.hpp"
 #include "McalPwm_core.hpp"
 #include "infMcalPwm_Exp.hpp"
