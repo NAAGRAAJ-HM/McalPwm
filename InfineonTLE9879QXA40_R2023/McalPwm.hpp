@@ -32,14 +32,14 @@ class module_McalPwm:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-      const ConstMcalPwm_Type* lptrConst = (ConstMcalPwm_Type*)NULL_PTR;
+      const ConstModule_TypeAbstract* lptrNvMBlocksRom = (ConstModule_TypeAbstract*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, MCALPWM_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, MCALPWM_CONST,       MCALPWM_APPL_CONST) lptrConstModule
+            CONSTP2CONST(ConstModule_TypeAbstract, MCALPWM_CONST,       MCALPWM_APPL_CONST) lptrNvMBlocksRomModule
          ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALPWM_CONFIG_DATA, MCALPWM_APPL_CONST) lptrCfgModule
       );
       FUNC(void, MCALPWM_CODE) DeInitFunction (void);

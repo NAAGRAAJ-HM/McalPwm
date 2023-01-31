@@ -7,11 +7,8 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define CONSTMCALPWM_AR_RELEASE_VERSION_MAJOR                                  4
-#define CONSTMCALPWM_AR_RELEASE_VERSION_MINOR                                  3
-
-#define Const_DefaultInit_ConstMcalPwm                                                                           \
-   ,  {CONSTMCALPWM_AR_RELEASE_VERSION_MAJOR, CONSTMCALPWM_AR_RELEASE_VERSION_MINOR, 0x00,0xFF,0x01,'0','1','0'} \
+#define NvM_InitBlocksRom_McalPwm                                                                      \
+   ,  {MCALPWM_AR_RELEASE_VERSION_MAJOR, MCALPWM_AR_RELEASE_VERSION_MINOR, 0x00,0xFF,0x01,'0','1','0'} \
 
 /******************************************************************************/
 /* EOF                                                                        */
